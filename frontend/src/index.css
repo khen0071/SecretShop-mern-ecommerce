@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #333;
+  --white: #fff;
+  --gray: #818181;
+  --green: #008000;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  /* min-height: 90vh; */
+  background: rgb(225, 166, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(225, 166, 36, 0.2) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(225, 166, 36, 0.2) 100%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.mainContainer {
+  @apply m-5 md:mx-20 md:my-10;
+}
