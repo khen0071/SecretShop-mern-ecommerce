@@ -1,8 +1,16 @@
+import { products } from "../products";
+
+import Hero from "../component/Hero";
+import Process from "../component/Process";
+import Presentation from "../component/Presentation";
+
 const Home = () => {
   return (
     <>
+      <Hero />
+      <Process />
       <div className="mainContainer">
-        <h1 className="text-[50px] text-lightGray">Home Page</h1>
+        <Presentation />
       </div>
     </>
   );

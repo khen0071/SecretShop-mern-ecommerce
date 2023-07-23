@@ -5,20 +5,22 @@
 :root {
   --black: #333;
   --white: #fff;
-  --gray: #818181;
+  --lightWhite: #f5f5f5;
+  --gray: #616161;
+  --lightgray: #8b8b8b;
   --green: #008000;
 }
 
 body {
   font-family: "Quicksand", sans-serif;
   /* min-height: 90vh; */
-  background: rgb(225, 166, 36);
+  /* background: rgb(140, 140, 140);
   background: linear-gradient(
     90deg,
-    rgba(225, 166, 36, 0.2) 0%,
+    rgba(140, 140, 140, 0.1) 0%,
     rgba(255, 255, 255, 1) 50%,
-    rgba(225, 166, 36, 0.2) 100%
-  );
+    rgba(140, 140, 140, 0.1) 100%
+  ); */
 }
 
 * {
@@ -35,6 +37,154 @@ li {
   list-style: none;
 }
 
+.gradientOverlay {
+  background: linear-gradient(90deg, #6e6e6e, #e9e9e9);
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "Anton", sans-serif;
+}
+
+.buttonNav {
+  @apply font-semibold bg-black text-white py-1 px-3 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500;
+}
+
+.button {
+  @apply flex-1 text-[12px] bg-white text-black py-2 px-3 border-2 border-gray hover:border-2 hover:bg-black hover:text-white ease-in-out duration-500 uppercase font-semibold md:text-[16px];
+}
+
 .mainContainer {
   @apply m-5 md:mx-20 md:my-10;
 }
+
+/*Navbar*/
+.navContainer {
+  @apply mx-auto py-5 md:py-3 bg-black;
+}
+.navContent {
+  @apply max-w-[1400px] flex justify-between items-center mx-5 lg:px-10;
+}
+.logo {
+  @apply text-[20px] md:text-[30px] md:font-[700];
+}
+.navRight {
+  @apply hidden md:flex items-center justify-center space-x-3 text-white uppercase;
+}
+.menuIcon {
+  @apply md:hidden;
+}
+
+.burger {
+  @apply text-white text-[20px];
+}
+
+/*Navbar End*/
+
+/*Hero*/
+.heroContent {
+  @apply text-black flex flex-col justify-around items-center p-10 md:flex-row md:py-10 lg:px-[150px];
+}
+.sectionLeft {
+  @apply w-full space-y-4 flex flex-col justify-center items-center md:items-start;
+}
+.heroImgContainer {
+  background-image: url(../public/images/polygon2.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroH1 {
+  font-family: "Anton", sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #000000, #8b8b8b);
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .heroH1 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .heroH1 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .heroImgContainer {
+    background-image: url(../public/images/polygon-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .heroH1 {
+    font-size: 30px;
+  }
+}
+
+.heroP {
+  @apply text-[14px] text-gray font-semibold pb-3 italic text-center md:text-start md:text-[16px];
+}
+
+.imageContainer {
+  @apply w-2/3 md:w-full flex justify-center items-center;
+}
+/*Hero End*/
+
+/*Process*/
+.processContainer {
+  @apply bg-lightWhite;
+}
+.processContent {
+  @apply m-5 md:mx-20 md:my-10 py-10;
+}
+.processItemContainer {
+  @apply flex flex-col justify-between items-start text-center space-y-6 md:space-y-0 lg:space-x-6 lg:flex-row;
+}
+.processItem {
+  @apply w-full flex flex-col justify-center items-center;
+}
+.itemH1 {
+  @apply text-[16px] md:text-[18px] font-semibold py-2;
+}
+.itemP {
+  @apply text-gray text-[14px] md:text-[16px];
+}
+.processIcon {
+  @apply md:text-[35px] text-[20px];
+}
+.iconContainer {
+  @apply w-[50px] h-[50px] md:w-[70px] md:h-[70px] bg-white flex justify-center items-center rounded-full;
+}
+/*Process End*/
+
+/*Presentation*/
+.presentationContainer {
+  @apply flex flex-col md:text-start text-center justify-between items-center md:flex-row;
+}
+.presentationContent {
+  @apply w-full px-4 space-y-3 md:p-20;
+}
+.presentationH1 {
+  @apply text-[20px] md:text-[40px] text-gray;
+}
+.presentationStrong {
+  @apply text-black text-[22px] md:text-[45px];
+}
+.presentationP {
+  @apply text-[14px] text-gray md:text-[16px];
+}
+/*Presentation End*/
