@@ -9,10 +9,13 @@
   --gray: #616161;
   --lightgray: #8b8b8b;
   --green: #008000;
+  --dropdown: #ececec;
 }
 
 body {
   font-family: "Quicksand", sans-serif;
+  background-image: url(../public/images/polygon2.svg);
+
   /* min-height: 90vh; */
   /* background: rgb(140, 140, 140);
   background: linear-gradient(
@@ -21,6 +24,12 @@ body {
     rgba(255, 255, 255, 1) 50%,
     rgba(140, 140, 140, 0.1) 100%
   ); */
+}
+
+@media only screen and (max-width: 770px) {
+  body {
+    background-image: url(../public/images/polygon-mobile.svg);
+  }
 }
 
 * {
@@ -47,12 +56,46 @@ li {
   font-family: "Anton", sans-serif;
 }
 
+/* .dropDownContainer {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  width: 120px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--dropdown);
+  border: 3px solid #ddd;
+  z-index: 100;
+  color: #333;
+} */
+
+/* .dropDownContainer::before {
+  content: "";
+  position: absolute;
+  top: -0.7rem;
+  right: 1.1rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: var(--dropdown);
+  border-top: 1px solid #333;
+  z-index: 100;
+} */
+
 .buttonNav {
-  @apply font-semibold bg-black text-white py-1 px-3 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500;
+  @apply font-semibold cursor-pointer bg-black text-white py-1 px-3 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500;
 }
 
 .button {
   @apply flex-1 text-[12px] bg-white text-black py-2 px-3 border-2 border-gray hover:border-2 hover:bg-black hover:text-white ease-in-out duration-500 uppercase font-semibold md:text-[16px];
+}
+
+.buttonContainer {
+  @apply font-semibold bg-black text-white py-2 px-4 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 uppercase;
+}
+
+.buttonContainerDisabled {
+  @apply font-semibold bg-gray line-through text-white py-2 px-4 border-2 border-white hover:border-2 hover:border-gray hover:bg-gray hover:text-white ease-in-out duration-500;
 }
 
 .mainContainer {
@@ -64,36 +107,59 @@ li {
   @apply mx-auto py-5 md:py-3 bg-black;
 }
 .navContent {
-  @apply max-w-[1400px] flex justify-between items-center mx-5 lg:px-10;
+  @apply max-w-[1400px] px-3 flex justify-between items-center mx-auto lg:px-10;
 }
 .logo {
   @apply text-[20px] md:text-[30px] md:font-[700];
 }
 .navRight {
-  @apply hidden md:flex items-center justify-center space-x-3 text-white uppercase;
+  @apply md:flex flex items-center justify-center space-x-3  text-white uppercase md:space-x-10;
 }
-.menuIcon {
-  @apply md:hidden;
+.menuItems {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  color: white;
+  padding: 30px;
+  background: #000;
+  text-align: center;
+  z-index: 1;
 }
 
-.burger {
-  @apply text-white text-[20px];
+@media only screen and (max-width: 400px) {
+  .menuItems {
+    top: 80px;
+    right: 10px;
+  }
 }
 
 /*Navbar End*/
 
 /*Hero*/
 .heroContent {
-  @apply text-black flex flex-col justify-around items-center p-10 md:flex-row md:py-10 lg:px-[150px];
+  @apply max-w-screen-xl p-3 m-auto  flex justify-center md:flex-row flex-col md:p-5 md:space-x-3;
 }
 .sectionLeft {
-  @apply w-full space-y-4 flex flex-col justify-center items-center md:items-start;
+  @apply w-full flex justify-center md:items-start;
 }
+
+.sectionMid {
+  @apply w-full flex flex-col justify-center items-center md:items-center;
+}
+
+.sectionRight {
+  @apply w-full flex justify-center text-end md:items-end;
+}
+
+.heroImageContainer {
+  @apply w-2/3 mx-auto md:w-full;
+}
+
 .heroImgContainer {
-  background-image: url(../public/images/polygon2.svg);
+  /* background-image: url(../public/images/polygon2.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .heroH1 {
@@ -110,6 +176,12 @@ li {
 }
 
 @media only screen and (max-width: 1400px) {
+  .heroH1 {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
   .heroH1 {
     font-size: 50px;
   }
@@ -130,18 +202,8 @@ li {
   }
 }
 @media only screen and (max-width: 500px) {
-  .heroH1 {
-    font-size: 30px;
-  }
 }
 
-.heroP {
-  @apply text-[14px] text-gray font-semibold pb-3 italic text-center md:text-start md:text-[16px];
-}
-
-.imageContainer {
-  @apply w-2/3 md:w-full flex justify-center items-center;
-}
 /*Hero End*/
 
 /*Process*/
@@ -149,7 +211,7 @@ li {
   @apply bg-lightWhite;
 }
 .processContent {
-  @apply m-5 md:mx-20 md:my-10 py-10;
+  @apply max-w-[1400px] m-5 md:mx-auto md:my-10 py-10;
 }
 .processItemContainer {
   @apply flex flex-col justify-between items-start text-center space-y-6 md:space-y-0 lg:space-x-6 lg:flex-row;
@@ -173,10 +235,10 @@ li {
 
 /*Presentation*/
 .presentationContainer {
-  @apply flex flex-col md:text-start text-center justify-between items-center md:flex-row;
+  @apply flex max-w-[1400px] mx-auto py-20 flex-col text-center  justify-between items-center md:py-10 lg:flex-row;
 }
 .presentationContent {
-  @apply w-full px-4 space-y-3 md:p-20;
+  @apply w-full px-4 space-y-3 md:p-20 flex justify-center items-center flex-col;
 }
 .presentationH1 {
   @apply text-[20px] md:text-[40px] text-gray;
@@ -188,3 +250,196 @@ li {
   @apply text-[14px] text-gray md:text-[16px];
 }
 /*Presentation End*/
+
+/*Featured*/
+.featuredContainer {
+  @apply max-w-[1400px] mx-auto;
+}
+.featuredCardContainer {
+  @apply grid 2xl:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-4;
+}
+/*Featured End*/
+
+/*Card Component*/
+.cardContainer {
+  @apply md:m-2 border border-[#cccccc] p-5 bg-lightWhite;
+}
+
+.imageContainer {
+  @apply xxl:h-[300px] xl:w-[600px] xl:h-[200px] md:h-[250px] object-cover;
+}
+
+.cardEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 500px) {
+  .cardEllipsis {
+    white-space: wrap;
+  }
+}
+/*Card Component End*/
+
+/*Product Screen*/
+.productError {
+  @apply text-center py-2 text-red text-[18px] font-bold;
+}
+.productContainer {
+  @apply min-h-screen m-6 xl:mx-[200px] lg:mx-[150px] md:mx-[100px] lg:my-20;
+}
+.productContent {
+  @apply flex flex-col justify-between items-center md:space-x-3 space-y-3 lg:flex-row lg:space-y-0;
+}
+.productImage {
+  @apply mx-auto h-[300px] w-[400px] xxl:h-[400px] xxl:w-[500px] lg:w-[400px] lg:h-[300px] sm:h-[400px] sm:w-[500px] object-cover;
+}
+
+.productRightSection {
+  @apply w-full space-y-1 text-center rounded-lg p-3 md:p-6 lg:text-start;
+}
+/*Product Screen End*/
+
+/*Cart Screen*/
+.cartContainer {
+  @apply lg:mx-[100px] my-3 mx-6 min-h-screen;
+}
+.cartH1 {
+  @apply text-center font-bold uppercase text-[18px] md:text-[30px];
+}
+.cartContent {
+  @apply flex flex-col justify-between space-y-6 pt-5 lg:flex-col md:space-y-3;
+}
+.cartSection1 {
+  @apply w-full lg:w-full md:p-5 p-3 bg-lightWhite rounded-lg;
+}
+.cartEmpty {
+  @apply flex flex-col justify-center md:space-x-3 space-y-3 items-center md:flex-row md:space-y-0 md:justify-center;
+}
+.cartSection1Content {
+  @apply flex text-center space-y-3 flex-col justify-between items-center space-x-0 pb-5 md:flex-row md:space-x-5 md:space-y-0;
+}
+.cartImage {
+  @apply md:flex-auto md:w-64 border-2 p-1 border-lightWhite;
+}
+.cartName {
+  @apply flex-none font-bold md:flex-auto md:w-32 md:font-semibold;
+}
+.cartDetails {
+  @apply flex md:w-1/2 justify-between items-center md:space-x-10 space-x-3;
+}
+.cartSection2 {
+  @apply w-full  lg:w-full md:p-5 p-3 items-center bg-lightWhite rounded-lg;
+}
+.cartSection2Content {
+  @apply flex flex-col space-y-3  justify-between items-center pb-5 text-center md:flex-row md:space-y-0;
+}
+/*Cart Screen End*/
+
+/*Form*/
+
+.formContainer {
+  @apply min-h-screen flex flex-col justify-start items-center pt-[40px];
+}
+
+.formContent {
+  @apply bg-lightWhite border-2 border-lighterGray p-10 w-[300px] md:w-[400px] rounded-lg;
+}
+/*Form End*/
+
+/*Checkout*/
+.checkoutContainer {
+  @apply flex justify-center items-center space-x-3 md:space-x-5 pb-[30px];
+}
+/*Checkout End*/
+
+/*Payment Screen*/
+.paymentContent {
+  @apply flex flex-col  justify-center items-center bg-lightWhite p-10 w-[300px] md:w-[500px] rounded-lg border-2 border-lighterGray;
+}
+.paymentHeader {
+  @apply text-center text-[18px] font-bold uppercase pb-3 border-b mb-3 md:text-[24px];
+}
+/*Payment Screen End*/
+
+/*Place Order Screen*/
+.placeOrderContainer {
+  @apply min-h-screen mb-10 pt-[40px] md:mx-[100px];
+}
+.placeOrderContent {
+  @apply bg-lightWhite border-2 border-lighterGray p-5 mx-10;
+}
+.placeOrderHeader {
+  @apply text-center text-[18px] font-bold uppercase pb-3 border-b mb-3 md:text-[24px];
+}
+.orderSection1 {
+  @apply w-full;
+}
+.orderSection2 {
+  @apply p-4 w-full lg:w-1/2 border-t-2 lg:border-none lg:p-0;
+}
+.orderSection2Header {
+  @apply flex text-center flex-col md:flex-row my-2 md:space-x-1 md:items-center md:text-start;
+}
+.orderSection2Header2 {
+  @apply flex justify-between items-center;
+}
+.orderSection2Total {
+  @apply flex justify-between items-center border-t border-b border-lightGray py-2 my-2 text-[18px] md:text-[20px];
+}
+.orderButton {
+  @apply font-semibold bg-gray text-white py-2 px-4 border-2 border-white hover:border-2 hover:border-gray  hover:text-white cursor-default ease-in-out duration-500 md:text-[16px] text-[12px];
+}
+/*Place Order Screen End*/
+
+/*OrderScreen*/
+.orderScreenContainer {
+  @apply min-h-screen mx-5 p-5 bg-lightWhite border-2 border-lighterGray mb-10 mt-[40px] md:mx-[100px];
+}
+.orderScreenContent {
+  @apply flex flex-col lg:flex-row;
+}
+/*OrderScreen End*/
+
+/*Profile Screen*/
+.profileContainer {
+  @apply min-h-screen flex flex-col lg:space-x-6 lg:space-y-0 space-y-6 mx-5 mb-10 mt-[40px]  md:justify-between md:mx-[50px]  lg:flex-row;
+}
+.profileContent {
+  @apply px-5 py-3 bg-lightWhite border-2 border-lighterGray md:px-10;
+}
+/*Profile Screen End*/
+
+/*Order List Screen*/
+.orderListScreenContainer {
+  @apply min-h-screen mx-5 mb-10 mt-[40px] md:mx-[100px];
+}
+.orderScreenDeliverButton {
+  @apply font-semibold bg-black text-white p-2 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 text-[8px] md:px-4 md:text-[14px];
+}
+/*Order List Screen End*/
+
+/*Product List Screen*/
+.productListScreenContainer {
+  @apply min-h-screen mx-5 mb-10 mt-[40px] md:mx-[100px];
+}
+.productScreenAddButton {
+  @apply font-semibold p-2 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 text-[8px] md:px-4 md:text-[14px];
+}
+/*Product List Screen End*/
+
+/*Update product Screen*/
+.updateProductContainer {
+  @apply min-h-screen mx-3 md:flex flex-col justify-start items-center py-[10px];
+}
+/*Update product Screen End*/
+
+/*User List Screen*/
+.userListScreenContainer {
+  @apply min-h-screen mx-5 mb-10 mt-[40px] md:mx-[100px];
+}
+.userListScreenButton {
+  @apply font-semibold p-2 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 text-[8px] md:px-4 md:text-[14px];
+}
+/*User List Screen End*/

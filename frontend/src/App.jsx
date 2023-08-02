@@ -1,28 +1,33 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Home from "./pages/home";
+import { Outlet } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import ScrollToTop from "./component/ScrollToTop";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   return (
     <>
-      <Router>
-        <ScrollToTop />
-        <Navbar />
-        <div className="">
-          <Routes>
-            <Route path="*" element={<Navigate to="/" replace />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+      {/* <ScrollToTop /> */}
+      <Navbar />
+      <div className="">
+        <Outlet />
+      </div>
+
+      <Footer />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };

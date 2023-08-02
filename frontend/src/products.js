@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 1,
+    _id: 1,
     name: "Airpods Wireless Bluetooth Headphones",
     image: "/images/airpods.jpg",
     description:
@@ -9,12 +9,12 @@ export const products = [
     category: "Electronics",
     price: 89.99,
     countInStock: 20,
-    rating: 4.5,
+    rating: 1,
     numReviews: 12,
   },
   {
-    id: 2,
-    name: "RTX GeForce Rog Strix Gaming 4090",
+    _id: 2,
+    name: "RTX GeForce Rog Strix Gaming OC Edition 4090",
     image: "/images/4090.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laboriosam voluptates natus porro eveniet illum maxime inventore unde modi animi?",
@@ -22,11 +22,11 @@ export const products = [
     category: "Electronics",
     price: 489.99,
     countInStock: 5,
-    rating: 5,
+    rating: 1.5,
     numReviews: 3,
   },
   {
-    id: 3,
+    _id: 3,
     name: "AMD Ryzen Threadripper",
     image: "/images/threadripper.jpg",
     description:
@@ -35,11 +35,11 @@ export const products = [
     category: "Electronics",
     price: 789.99,
     countInStock: 2,
-    rating: 5,
+    rating: 2,
     numReviews: 8,
   },
   {
-    id: 4,
+    _id: 4,
     name: "Nike Jordans",
     image: "/images/jordans.jpg",
     description:
@@ -48,11 +48,11 @@ export const products = [
     category: "Shoes",
     price: 120.0,
     countInStock: 0,
-    rating: 5,
+    rating: 0,
     numReviews: 0,
   },
   {
-    id: 5,
+    _id: 5,
     name: "Play Station 5",
     image: "/images/ps5.jpg",
     description:
@@ -66,29 +66,29 @@ export const products = [
   },
 
   {
-    id: 6,
+    _id: 6,
     name: "Rolex",
     image: "/images/rolex.jpg",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laboriosam voluptates natus porro eveniet illum maxime inventore unde modi animi?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laboriosam voluptates natus porro eveniet illum maxime inventore unde modi animi? lorem10 asjdkasjdkjalsjdlkasjkld asdasd asdasdasd asd",
     brand: "Rolex",
     category: "Watch",
     price: 1289.99,
     countInStock: 1,
-    rating: 5,
+    rating: 4,
     numReviews: 8,
   },
   {
-    id: 7,
+    _id: 7,
     name: "Samsung Flip",
-    image: "/images/samsung.jpg",
+    image: "/images/samsung-flip.png",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo laboriosam voluptates natus porro eveniet illum maxime inventore unde modi animi?",
     brand: "Samsung",
     category: "Electronics",
     price: 189.99,
     countInStock: 12,
-    rating: 4.5,
+    rating: 5,
     numReviews: 2,
   },
 ];

@@ -1,21 +1,5 @@
 import Reveal from "./shared/Reveal";
 
-import { motion } from "framer-motion";
-
-const buttonVariant = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-  },
-  animate: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      delay: 1.5,
-    },
-  },
-};
-
 const Hero = () => {
   return (
     <>
@@ -23,11 +7,10 @@ const Hero = () => {
         <div className="heroContent">
           <div className="sectionLeft">
             <Reveal>
-              <h1 className="heroH1 text-center md:text-start">
-                Shop the Latest Trends, Unbeatable Deals, and More
-              </h1>
+              <h1 className="heroH1">Shop the Latest Trends</h1>
             </Reveal>
-            <Reveal>
+
+            {/* <Reveal>
               <p className="heroP">
                 - We bring you a world of convenience and excitement with our
                 wide selection of products, competitive prices, and exceptional
@@ -42,9 +25,9 @@ const Hero = () => {
               className="button"
             >
               Shop Now!
-            </motion.div>
+            </motion.div> */}
           </div>
-          <div className="imageContainer">
+          {/* <div className="imageContainer">
             <Reveal>
               <div className="heroImage">
                 <img
@@ -53,6 +36,26 @@ const Hero = () => {
                   className="object-contain"
                 />
               </div>
+            </Reveal>
+          </div> */}
+
+          <div className="sectionMid">
+            <div className="">
+              <Reveal>
+                <div className="heroImageContainer">
+                  <img
+                    src="/images/iphone14.png"
+                    alt="hero"
+                    className="object-contain"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          </div>
+
+          <div className="sectionRight">
+            <Reveal>
+              <h1 className="heroH1">Unbeatable Deals, and More</h1>
             </Reveal>
           </div>
         </div>

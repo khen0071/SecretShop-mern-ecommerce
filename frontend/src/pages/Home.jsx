@@ -1,8 +1,7 @@
-import { products } from "../products";
-
 import Hero from "../component/Hero";
 import Process from "../component/Process";
 import Presentation from "../component/Presentation";
+import Featured from "../component/Featured";
 
 const Home = () => {
   return (
@@ -10,6 +9,7 @@ const Home = () => {
       <Hero />
       <Process />
       <div className="mainContainer">
+        <Featured />
         <Presentation />
       </div>
     </>
