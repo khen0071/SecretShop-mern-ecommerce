@@ -34,7 +34,7 @@ import UserEditScreen from "./pages/admin/UserEditScreen.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+      <Route path="*" element={<Navigate to="/" replace />} />
       <Route index={true} path="/" element={<Home />} />
       <Route path="/search/:keyword" element={<Home />} />
       <Route path="/page/:pageNumber" element={<Home />} />

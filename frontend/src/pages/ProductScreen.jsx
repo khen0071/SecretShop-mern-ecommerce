@@ -319,11 +319,11 @@ const ProductScreen = () => {
                   ) : (
                     <div>
                       <p className="font-semibold py-3 italic">
-                        "Please{" "}
+                        Please{" "}
                         <span className="text-blue">
                           <Link to="/login">Login</Link>
                         </span>{" "}
-                        to write a review."
+                        to write a review.
                       </p>
                     </div>
                   )}
