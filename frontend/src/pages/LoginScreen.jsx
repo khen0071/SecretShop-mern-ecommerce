@@ -99,7 +99,7 @@ const LoginScreen = () => {
               {isLoading && <Spinner />}
 
               <div className="text-center mt-6">
-                <p>Don't have an account yet? </p>
+                <p>Dont have an account yet? </p>
                 <strong className="text-emeraldGreen">
                   <Link
                     to={
