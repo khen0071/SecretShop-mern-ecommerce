@@ -21,7 +21,7 @@ const OrderListScreen = () => {
             ) : (
               <table className="table-auto w-full border text-center bg-lightWhite">
                 <thead className="border-b">
-                  <tr className="text-[8px] md:text-[16px]">
+                  <tr className="text-[10px] md:text-[16px]">
                     <th className="py-3 md:py-6">ID</th>
                     <th>DATE</th>
                     <th>TOTAL</th>
@@ -30,10 +30,12 @@ const OrderListScreen = () => {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody className="text-[8px] md:text-[14px] font-semibold">
+                <tbody className="text-[10px] md:text-[14px] font-semibold">
                   {orders.map((order) => (
                     <tr key={order._id} className="border-b">
-                      <td className="py-4 text-blue">{order._id}</td>
+                      <td className="py-4 text-blue px-1 break-all w-[50px] md:w-auto">
+                        {order._id}
+                      </td>
                       <td>{order.createdAt.substring(0, 10)}</td>
                       <td className="text-emeraldGreen">
                         $
@@ -42,25 +44,31 @@ const OrderListScreen = () => {
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                       </td>
                       {order.isPaid ? (
-                        <td>{order.paidAt.substring(0, 10)}</td>
+                        // <td>{order.paidAt.substring(0, 10)}</td>
+                        <td>
+                          <i className="fa-solid fa-circle-check text-green font-semibold text-[10px] md:text-[16px]"></i>
+                        </td>
                       ) : (
                         <td>
-                          <i className="fa-solid fa-circle-xmark text-red font-semibold text-[8px] md:text-[16px]"></i>
+                          <i className="fa-solid fa-circle-xmark text-red font-semibold text-[10px] md:text-[16px]"></i>
                         </td>
                       )}
 
                       {order.isDelivered ? (
-                        <td>{order.deliveredAt.substring(0, 10)}</td>
+                        // <td>{order.deliveredAt.substring(0, 10)}</td>
+                        <td>
+                          <i className="fa-solid fa-circle-check text-green font-semibold text-[10px] md:text-[16px]"></i>
+                        </td>
                       ) : (
                         <td>
-                          <i className="fa-solid fa-circle-xmark text-red font-semibold text-[8px] md:text-[16px]"></i>
+                          <i className="fa-solid fa-circle-xmark text-red font-semibold text-[10px] md:text-[16px]"></i>
                         </td>
                       )}
 
                       <td className="px-[5px]">
                         <Link to={`/order/${order._id}`}>
                           <button className="orderScreenDeliverButton uppercase">
-                            Details
+                            <i className="fa-solid fa-magnifying-glass"></i>
                           </button>
                         </Link>
                       </td>

@@ -5,13 +5,13 @@ const CardComponent = ({ product }) => {
   const {
     name,
     image,
-    description,
-    brand,
-    category,
     price,
     countInStock,
-    rating,
-    numReviews,
+    // rating,
+    // numReviews,
+    // description,
+    // brand,
+    // category,
   } = product;
 
   return (

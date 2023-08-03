@@ -416,7 +416,7 @@ li {
   @apply min-h-screen mx-5 mb-10 mt-[40px] md:mx-[100px];
 }
 .orderScreenDeliverButton {
-  @apply font-semibold bg-black text-white p-2 border-2 border-white hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 text-[8px] md:px-4 md:text-[14px];
+  @apply font-semibold bg-black text-white p-[6px]  hover:border-2 hover:border-gray hover:bg-white hover:text-black ease-in-out duration-500 text-[8px] md:px-4 md:text-[14px];
 }
 /*Order List Screen End*/
 

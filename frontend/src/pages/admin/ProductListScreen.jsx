@@ -73,41 +73,42 @@ const ProductListScreen = () => {
               <>
                 <table className="table-auto w-full border text-center bg-lightWhite">
                   <thead className="border-b">
-                    <tr className="text-[8px] md:text-[16px]">
+                    <tr className="text-[10px] md:text-[16px]">
                       <th className="py-3 md:py-6">NAME</th>
                       <th>PRICE</th>
                       <th>CATEGORY</th>
                       <th>BRAND</th>
                       <th>STOCK</th>
                       <th></th>
+                      <th></th>
                     </tr>
                   </thead>
-                  <tbody className="text-[8px] md:text-[14px] font-semibold">
+                  <tbody className="text-[10px] md:text-[14px] font-semibold">
                     {data.products.map((product) => (
                       <tr key={product._id} className="border-b">
-                        <td className="py-4 px-[5px] capitalize">
+                        <td className="py-4 px-[3px] capitalize">
                           {product.name}
                         </td>
-                        <td className="px-[5px] text-emeraldGreen">
+                        <td className="px-[3px] text-emeraldGreen">
                           $
                           {product.price
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         </td>
-                        <td className="px-[5px] capitalize">
+                        <td className="px-[3px] capitalize">
                           {product.category}
                         </td>
-                        <td className="px-[5px] capitalize">{product.brand}</td>
+                        <td className="px-[3px] capitalize">{product.brand}</td>
 
                         {product.countInStock > 0 ? (
-                          <td className="px-[5px]">{product.countInStock}</td>
+                          <td className="px-[3px]">{product.countInStock}</td>
                         ) : (
-                          <td className="text-red px-[5px]">
+                          <td className="text-red px-[3px]">
                             {product.countInStock}
                           </td>
                         )}
 
-                        <td className="px-[5px]">
+                        <td className="px-[1x]">
                           <Link to={`/admin/product/${product._id}/edit`}>
                             <button className="productScreenAddButton bg-green text-white">
                               <i className="fa-solid fa-pen-to-square"></i>
@@ -116,7 +117,7 @@ const ProductListScreen = () => {
                         </td>
 
                         <td
-                          className="px-[5px]"
+                          className="px-[3px]"
                           onClick={() => deleteHandler(product._id)}
                         >
                           <button className="productScreenAddButton bg-red text-white">

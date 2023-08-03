@@ -63,25 +63,6 @@ const Navbar = () => {
           </Link>
 
           <div className="navRight">
-            <Link to="/cart">
-              <div className="flex justify-center items-center space-x-2">
-                <p className="font-semibold text-[12px] md:text-[16px]">
-                  <i className="fa-solid fa-cart-shopping"></i>
-                </p>
-                {cartItems.length > 0 ? (
-                  <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-emeraldGreen rounded-full text-[12px]">
-                    <p className="flex justify-start items-start">
-                      {cartItems.reduce((a, c) => a + c.qty, 0)}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-red rounded-full text-[12px]">
-                    <p className="flex justify-start items-start">0</p>
-                  </div>
-                )}
-              </div>
-            </Link>
-
             {userInfo && userInfo.isAdmin ? (
               <>
                 <div
@@ -131,6 +112,24 @@ const Navbar = () => {
               </>
             ) : userInfo ? (
               <>
+                <Link to="/cart">
+                  <div className="flex justify-center items-center space-x-2">
+                    <p className="font-semibold text-[12px] md:text-[16px]">
+                      <i className="fa-solid fa-cart-shopping"></i>
+                    </p>
+                    {cartItems.length > 0 ? (
+                      <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-emeraldGreen rounded-full text-[12px]">
+                        <p className="flex justify-start items-start">
+                          {cartItems.reduce((a, c) => a + c.qty, 0)}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-red rounded-full text-[12px]">
+                        <p className="flex justify-start items-start">0</p>
+                      </div>
+                    )}
+                  </div>
+                </Link>
                 <div
                   onClick={openHandler}
                   className="flex items-center justify-center space-x-2"
@@ -160,9 +159,32 @@ const Navbar = () => {
                 )}
               </>
             ) : (
-              <Link to="/login">
-                <p className="buttonNav text-[12px] md:text-[16px]">Sign In</p>
-              </Link>
+              <div className="flex items-center space-x-3">
+                <Link to="/cart">
+                  <div className="flex justify-center items-center space-x-2">
+                    <p className="font-semibold text-[12px] md:text-[16px]">
+                      <i className="fa-solid fa-cart-shopping"></i>
+                    </p>
+                    {cartItems.length > 0 ? (
+                      <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-emeraldGreen rounded-full text-[12px]">
+                        <p className="flex justify-start items-start">
+                          {cartItems.reduce((a, c) => a + c.qty, 0)}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="flex justify-center items-center border-2 w-[20px] h-[20px] text-center bg-red rounded-full text-[12px]">
+                        <p className="flex justify-start items-start">0</p>
+                      </div>
+                    )}
+                  </div>
+                </Link>
+
+                <Link to="/login">
+                  <p className="buttonNav text-[12px] md:text-[16px]">
+                    Sign In
+                  </p>
+                </Link>
+              </div>
             )}
 
             {/* {userInfo && userInfo.isAdmin

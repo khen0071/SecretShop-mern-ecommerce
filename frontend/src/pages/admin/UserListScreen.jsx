@@ -42,7 +42,7 @@ const UserListScreen = () => {
             ) : (
               <table className="table-auto w-full border text-center bg-lightWhite">
                 <thead className="border-b">
-                  <tr className="text-[8px] md:text-[16px]">
+                  <tr className="text-[10px] md:text-[16px]">
                     {/* <th className="py-3 md:py-6">ID</th> */}
                     <th className="py-3 md:py-6">NAME</th>
                     <th>EMAIL</th>
@@ -51,7 +51,7 @@ const UserListScreen = () => {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody className="text-[8px] md:text-[14px] font-semibold">
+                <tbody className="text-[10px] md:text-[14px] font-semibold">
                   {users.map((user) => (
                     <tr key={user._id} className="border-b">
                       {/* <td className="py-4 text-blue">{user._id}</td> */}
