@@ -63,9 +63,15 @@ const CardComponent = ({ product }) => {
               ) : (
                 <div className="flex space-x-1">
                   <Rating value={product.rating} />
-                  <p className="font-semibold text-gray text-[14px] ">
-                    {product.numReviews} Reviews
-                  </p>
+                  {product.numReviews > 1 ? (
+                    <p className="font-semibold text-gray text-[14px] ">
+                      {product.numReviews} Reviews
+                    </p>
+                  ) : (
+                    <p className="font-semibold text-gray text-[14px] ">
+                      {product.numReviews} Review
+                    </p>
+                  )}
                 </div>
               )}
             </div>
