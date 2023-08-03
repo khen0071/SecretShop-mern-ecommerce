@@ -9,6 +9,7 @@ import SearchBox from "./SearchBox";
 const Featured = () => {
   // const [products, setProducts] = useState([]);
   // const [loading, setLoading] = useState(null);
+
   const { pageNumber, keyword } = useParams();
 
   const { data, isLoading, error } = useGetProductsQuery({

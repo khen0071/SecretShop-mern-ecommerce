@@ -33,7 +33,7 @@ const fetchProductById = asyncHandler(async (req, res) => {
 //Create a product Route: /api/products POST
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: "Sample Name",
+    name: "Sample Product",
     price: 0,
     user: req.user._id,
     image: "/images/sample.png",

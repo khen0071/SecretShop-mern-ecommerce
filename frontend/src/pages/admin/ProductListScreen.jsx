@@ -34,11 +34,17 @@ const ProductListScreen = () => {
   };
 
   const createProductHandler = async () => {
-    if (window.confirm("Create New Product?")) {
+    if (
+      window.confirm(
+        "Create New Product? New products are created the end of the list"
+      )
+    ) {
       try {
         await createProduct();
         refetch();
-        toast.success("Product Created, Please edit Sample Product");
+        toast.success(
+          `Product Created, Please edit "Sample Product" at the end of the list`
+        );
       } catch (error) {
         toast.error(error?.data?.message || error.error);
       }

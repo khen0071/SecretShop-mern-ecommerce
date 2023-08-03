@@ -145,9 +145,10 @@ const ProductScreen = () => {
                     </Reveal>
                     <Reveal>
                       <p className="text-[22px] text-emeraldGreen font-semibold">
-                        ${product.price}
-                        {/* .toString()
-                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",") */}
+                        $
+                        {product.price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                       </p>
                     </Reveal>
                   </div>
@@ -275,7 +276,13 @@ const ProductScreen = () => {
                     </h1>
                     {loadingProductReview && <Spinner />}
 
-                    {userInfo ? (
+                    {userInfo && userInfo.isAdmin ? (
+                      <div className="text-center">
+                        <p className="font-bold italic text-green">
+                          Admin Cannot Write Review
+                        </p>
+                      </div>
+                    ) : userInfo ? (
                       <div>
                         <form onSubmit={submitHandler}>
                           <div className="flex flex-col py-1">
@@ -310,6 +317,7 @@ const ProductScreen = () => {
                               type="textarea"
                               rows={4}
                               value={comment}
+                              required
                               onChange={(e) => setComment(e.target.value)}
                             />
                           </div>
@@ -324,7 +332,7 @@ const ProductScreen = () => {
                         </form>
                       </div>
                     ) : (
-                      <div>
+                      <div className="text-center">
                         <p className="font-semibold py-3 italic">
                           Please{" "}
                           <span className="text-blue">
